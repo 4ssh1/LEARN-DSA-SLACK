@@ -8,8 +8,8 @@ Click 👉 [Explore the Wiki for Detailed Documentation]()
 ## What We Offer
 
 ### Discussion Forums
-- [Best Practices](discussions/best-practices.md) - Share proven techniques and approaches in the respective channels on slack
-- [Optimization Techniques](discussions/optimization-techniques.md) - Deep dive into algorithmic optimizations
+- [Best Practices](dsa/community/discussions/best-practices.md) - Share proven techniques and approaches in the respective channels on slack
+- [Optimization Techniques](dsa/community/discussions/optimization-techniques.md) - Deep dive into algorithmic optimizations
 
 ## Getting Involved
 
