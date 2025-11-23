@@ -11,10 +11,6 @@ Click 👉 [Explore the Wiki for Detailed Documentation]()
 - [Best Practices](discussions/best-practices.md) - Share proven techniques and approaches in the respective channels on slack
 - [Optimization Techniques](discussions/optimization-techniques.md) - Deep dive into algorithmic optimizations
 
-### Member Profiles
-- [Directory](member-profiles/README.md) - Meet community members
-- [Create Your Profile](member-profiles/template.md) - Add yourself to the community
-
 ## Getting Involved
 
 ### 1. Share Your Knowledge
