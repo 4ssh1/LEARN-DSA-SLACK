@@ -7,13 +7,9 @@ Click 👉 [Explore the Wiki for Detailed Documentation]()
 
 ## What We Offer
 
-### Discussion Forums
-- [Best Practices](discussions/best-practices.md) - Share proven techniques and approaches in the respective channels on slack
-- [Optimization Techniques](discussions/optimization-techniques.md) - Deep dive into algorithmic optimizations
-
-### Member Profiles
-- [Directory](member-profiles/README.md) - Meet community members
-- [Create Your Profile](member-profiles/template.md) - Add yourself to the community
+### Discussion Forum
+- [Best Practices](dsa/community/discussions/best-practices.md) - Share proven techniques and approaches in the respective channels on slack
+- [Optimization Techniques](dsa/community/discussions/optimization-techniques.md) - Deep dive into algorithmic optimizations
 
 ## Getting Involved
 
@@ -48,7 +44,7 @@ Click 👉 [Explore the Wiki for Detailed Documentation]()
 2. **Clone Your Fork** - Download to your local machine:
    ```bash
    git clone https://github.com/4ssh1/LEARN-DSA-SLACK.git
-   cd LEARN-DSA
+   cd dsa
    ```
 3. **Create a Branch** - Use a descriptive branch name:
    ```bash
@@ -129,11 +125,11 @@ Thanks for contributing.
 
 ## Code of Conduct
 
-Please review our [Code of Conduct](../.github/CODE_OF_CONDUCT.md) to understand community standards.
+Please review our [Code of Conduct](.github/CODE_OF_CONDUCT.md) to understand community standards.
 
 ## Resources
 
-- [Problem Solving Template](../resources/problem-solving-template.md)
-- [Complexity Cheatsheet](../resources/complexity-cheatsheet.md)
-- [Algorithm Templates](../templates/)
-- [Setup Guides](../resources/setup-guides/)
+- [Problem Solving Template](dsa/resources/problem-solving-template.md)
+- [Complexity Cheatsheet](dsa/resources/complexity-cheatsheet.md)
+- [Algorithm Templates](dsa/templates/)
+- [Setup Guides](dsa/resources/setup-guides/)
