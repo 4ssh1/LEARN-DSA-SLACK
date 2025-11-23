@@ -2,8 +2,7 @@
 
 Welcome to the DSA Roadmap 2025 Community! This is a space for learners, mentors, and enthusiasts to collaborate, share knowledge, and grow together.
 
-Working on DSA? Check out Learn-DSA, a collaborative repo with solutions in Python, C++, JS, and C#. Our Wiki has detailed problem explanations and guides;
-Click 👉 [Explore the Wiki for Detailed Documentation]()
+Working on DSA? Check out Learn-DSA, a collaborative repo with solutions in Python, C++, JS, and C#. Our Wiki will be updated soon
 
 ## What We Offer
 
