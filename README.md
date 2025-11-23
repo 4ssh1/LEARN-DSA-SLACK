@@ -41,6 +41,52 @@ Click 👉 [Explore the Wiki for Detailed Documentation]()
 - Record solution walkthroughs
 - Share helpful resources
 
+## How to Contribute
+
+### Getting Started
+1. **Fork the Repository** - Create your own copy on GitHub
+2. **Clone Your Fork** - Download to your local machine:
+   ```bash
+   git clone https://github.com/4ssh1/LEARN-DSA-SLACK.git
+   cd LEARN-DSA
+   ```
+3. **Create a Branch** - Use a descriptive branch name:
+   ```bash
+   git checkout -b add-python-solution-two-sum
+   ```
+
+### Adding Solutions
+1. Navigate to the relevant week folder (e.g., `dsa/month-01-arrays-and-strings/week-01-array-basics/`)
+2. Go to the `solutions/` folder and choose your language (python, cpp, javascript, csharp)
+3. Create or update your solution file following the naming convention
+4. Add corresponding tests in the `tests/` subfolder
+5. Ensure your code runs without errors
+
+### Submitting Your Contribution
+1. **Commit Your Changes** - Use clear, descriptive messages:
+   ```bash
+   git add .
+   git commit -m "Add Python solution for two_sum"
+   ```
+2. **Push to Your Fork**:
+   ```bash
+   git push origin add-python-solution-two-sum
+   ```
+3. **Create a Pull Request** - Go to the main repository and open a PR with:
+   - Clear title (e.g., "Add Python solution for two_sum")
+   - Description of your changes
+   - Reference to related issues if any
+4. **Respond to Reviews** - Address feedback from reviewers
+5. **Merge** - Once approved, your PR will be merged into main
+
+### Tips for Success
+- Check existing solutions before adding yours
+- Follow the code style and formatting of your language
+- Write clean, readable code with meaningful variable names
+- Include comments for complex logic
+- Test your solution thoroughly
+- Keep commits atomic and focused
+
   ## ✅ Rules
 
 - One problem per folder → Multiple solutions go inside language subfolders.
