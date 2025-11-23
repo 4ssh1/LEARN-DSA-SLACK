@@ -7,7 +7,7 @@ Click 👉 [Explore the Wiki for Detailed Documentation]()
 
 ## What We Offer
 
-### Discussion Forums
+### Discussion Forum
 - [Best Practices](dsa/community/discussions/best-practices.md) - Share proven techniques and approaches in the respective channels on slack
 - [Optimization Techniques](dsa/community/discussions/optimization-techniques.md) - Deep dive into algorithmic optimizations
 
@@ -125,11 +125,11 @@ Thanks for contributing.
 
 ## Code of Conduct
 
-Please review our [Code of Conduct](../.github/CODE_OF_CONDUCT.md) to understand community standards.
+Please review our [Code of Conduct](.github/CODE_OF_CONDUCT.md) to understand community standards.
 
 ## Resources
 
-- [Problem Solving Template](../resources/problem-solving-template.md)
-- [Complexity Cheatsheet](../resources/complexity-cheatsheet.md)
-- [Algorithm Templates](../templates/)
-- [Setup Guides](../resources/setup-guides/)
+- [Problem Solving Template](dsa/resources/problem-solving-template.md)
+- [Complexity Cheatsheet](dsa/resources/complexity-cheatsheet.md)
+- [Algorithm Templates](dsa/templates/)
+- [Setup Guides](dsa/resources/setup-guides/)
