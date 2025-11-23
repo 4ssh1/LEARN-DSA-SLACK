@@ -1,0 +1,140 @@
+name: Validate Solutions
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'dsa/month-*/**/solutions/**'
+      - '.github/workflows/validate-solutions.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.10', '3.11']
+        node-version: ['18', '20']
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0'
+      
+      - name: Install C++ compiler
+        run: sudo apt-get update && sudo apt-get install -y build-essential
+
+      - name: Validate Python Solutions
+        run: |
+          echo "Validating Python solutions..."
+          python_files=$(find dsa/month-*/week-*/solutions/python -name "*.py" -type f ! -path "*/tests/*")
+          
+          if [ -z "$python_files" ]; then
+            echo "No Python solutions found"
+          else
+            for file in $python_files; do
+              echo "Checking syntax: $file"
+              python -m py_compile "$file" || exit 1
+            done
+            
+            # Run tests if they exist
+            test_files=$(find dsa/month-*/week-*/solutions/python/tests -name "test_*.py" -type f)
+            if [ ! -z "$test_files" ]; then
+              echo "Running Python tests..."
+              python -m pytest dsa/month-*/week-*/solutions/python/tests/ -v || exit 1
+            else
+              echo "No Python tests found - skipping test execution"
+            fi
+          fi
+      
+      - name: Validate JavaScript Solutions
+        run: |
+          echo "Validating JavaScript solutions..."
+          js_files=$(find dsa/month-*/week-*/solutions/javascript -name "*.js" -type f ! -path "*/tests/*")
+          
+          if [ -z "$js_files" ]; then
+            echo "No JavaScript solutions found"
+          else
+            for file in $js_files; do
+              echo "Checking syntax: $file"
+              node -c "$file" || exit 1
+            done
+            
+            # Run tests if they exist
+            test_files=$(find dsa/month-*/week-*/solutions/javascript/tests -name "*.test.js" -o -name "*.spec.js" -type f)
+            if [ ! -z "$test_files" ]; then
+              echo "Running JavaScript tests..."
+              npm test -- dsa/month-*/week-*/solutions/javascript/tests/ || exit 1
+            else
+              echo "No JavaScript tests found - skipping test execution"
+            fi
+          fi
+      
+      - name: Validate C++ Solutions
+        run: |
+          echo "Validating C++ solutions..."
+          cpp_files=$(find dsa/month-*/week-*/solutions/cpp -name "*.cpp" -type f ! -path "*/tests/*")
+          
+          if [ -z "$cpp_files" ]; then
+            echo "No C++ solutions found"
+          else
+            for file in $cpp_files; do
+              echo "Compiling: $file"
+              g++ -std=c++17 -Wall -Wextra "$file" -o /tmp/solution || exit 1
+            done
+            
+            # Run tests if they exist
+            test_files=$(find dsa/month-*/week-*/solutions/cpp/tests -name "test_*.cpp" -type f)
+            if [ ! -z "$test_files" ]; then
+              echo "Running C++ tests..."
+              for test in $test_files; do
+                g++ -std=c++17 "$test" -o /tmp/test_runner && /tmp/test_runner || exit 1
+              done
+            else
+              echo "No C++ tests found - skipping test execution"
+            fi
+          fi
+      
+      - name: Validate C# Solutions
+        run: |
+          echo "Validating C# solutions..."
+          cs_files=$(find dsa/month-*/week-*/solutions/csharp -name "*.cs" -type f ! -path "*/tests/*")
+          
+          if [ -z "$cs_files" ]; then
+            echo "No C# solutions found"
+          else
+            for file in $cs_files; do
+              echo "Checking C# syntax: $file"
+              dotnet build "$file" 2>&1 | grep -i "error" && exit 1 || true
+            done
+            
+            # Run tests if they exist
+            test_files=$(find dsa/month-*/week-*/solutions/csharp/tests -name "*.cs" -type f)
+            if [ ! -z "$test_files" ]; then
+              echo "Running C# tests..."
+              dotnet test dsa/month-*/week-*/solutions/csharp/tests/ || exit 1
+            else
+              echo "No C# tests found - skipping test execution"
+            fi
+          fi
+      
+      - name: Summary
+        if: always()
+        run: |
+          echo "✅ Solution validation complete!"
+          echo "All solution files have been validated for syntax errors."
+          echo "Tests were run where available."
