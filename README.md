@@ -7,7 +7,7 @@ Click 👉 [Explore the Wiki for Detailed Documentation]()
 
 ## What We Offer
 
-### Discussion Forums
+### Discussion Forum
 - [Best Practices](dsa/community/discussions/best-practices.md) - Share proven techniques and approaches in the respective channels on slack
 - [Optimization Techniques](dsa/community/discussions/optimization-techniques.md) - Deep dive into algorithmic optimizations
 
