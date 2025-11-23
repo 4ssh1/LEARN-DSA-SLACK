@@ -1,0 +1,34 @@
+name: Enforce Only Main as Target
+
+on:
+  pull_request_target:
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  check-target:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail and comment if PR does NOT target main
+        if: ${{ github.event.pull_request.base.ref != 'main' }}
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const base = pr.base.ref;
+            const number = pr.number;
+
+            // Leave a friendly comment
+            await github.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: number,
+              body: [
+                `Hi @${pr.user.login}, thanks for your contribution!`,
+                ``,
+                `This pull request is targeting **${base}**, but this repo only allows PRs into **main**.`,
+                `Please click "Edit" next to the PR title and change the base branch to main.`
+              ].join("\n")
+            });
+
+            core.setFailed(`PR targets '${base}', must target 'main'`);
+
