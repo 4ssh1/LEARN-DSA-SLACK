@@ -1,7 +1,7 @@
 name: Enforce Only Main as Target
 
 on:
-  pull_request_target:
+  pull_request:
     types: [opened, edited, synchronize, reopened]
 
 jobs:
