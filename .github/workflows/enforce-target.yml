@@ -18,7 +18,7 @@ jobs:
             const number = pr.number;
 
             // Leave a friendly comment
-            await github.issues.createComment({
+            await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: number,

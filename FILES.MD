@@ -1,3 +1,8 @@
+# Repository file tree
+
+The repository structure shown as a tree:
+
+```text
 LEARN-DSA
  ┣ dsa
  ┃ ┣ .github
@@ -111,3 +116,4 @@ LEARN-DSA
  ┃ ┗ ROADMAP.md
  ┣ FILES.MD
  ┗ README.md
+```

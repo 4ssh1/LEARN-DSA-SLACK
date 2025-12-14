@@ -44,11 +44,11 @@ Click 👉 [Explore the Wiki for Detailed Documentation]()
 2. **Clone Your Fork** - Download to your local machine:
    ```bash
    git clone https://github.com/4ssh1/LEARN-DSA-SLACK.git
-   cd dsa
+   cd LEARN-DSA-SLACK
    ```
 3. **Create a Branch** - Use a descriptive branch name:
    ```bash
-   git checkout -b add-python-solution-two-sum
+   git checkout -b USERNAME-add-python-solution-two-sum
    ```
 
 ### Adding Solutions
